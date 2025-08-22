@@ -195,3 +195,12 @@ console.log(`Math works: ${2 + 3} equals five`);
 console.log(`Comparisons too: ${5 > 3}`);
 
 console.log(`Just a regular string...`);
+
+const myName = "Mark";
+const myAge = 20;
+const myJob = "Student";
+const currentYear = 2025;
+
+console.log(`Hi, I'm ${myName}, a ${myAge} year old ${myJob}!`);
+
+console.log(`Born in ${currentYear - myAge}, 10*5 = ${10 * 5}, Adult: ${myAge >= 18}`);
