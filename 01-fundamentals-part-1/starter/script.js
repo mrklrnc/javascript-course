@@ -204,3 +204,92 @@ const currentYear = 2025;
 console.log(`Hi, I'm ${myName}, a ${myAge} year old ${myJob}!`);
 
 console.log(`Born in ${currentYear - myAge}, 10*5 = ${10 * 5}, Adult: ${myAge >= 18}`);
+
+const age = 15;
+
+if (age >= 18) {
+  console.log("Sarah can start driving license 🚗");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years :)`);
+}
+
+const testScore = 78; 
+
+if (testScore >= 90) {
+  console.log("Excellent! Grade A");
+} else if (testScore >= 80) {
+  console.log("Good job! Grade B");
+} else if (testScore >= 70) {
+  console.log("Not bad! Grade C");
+} else if (testScore >= 60) {
+  console.log("You passed! Grade D");
+} else {
+  console.log("You failed! Study harder");
+}
+
+const userAge = 20; 
+
+if (userAge >= 18) {
+  console.log("Welcome! You can access all content");
+} else if (userAge >= 13) {
+  console.log("Welcome! Restricted content only");
+} else {
+  console.log("Sorry, you're too young");
+}
+
+console.log(Boolean(0)); 
+console.log(Boolean(undefined)); 
+console.log(Boolean("Jonas")); 
+console.log(Boolean({})); 
+console.log(Boolean(""));
+
+const money = 100;
+if (money) {
+  console.log("Don't spend it all ;)");
+} else {
+  console.log("You should get a job!");
+}
+
+let height = 0; 
+if (height) {
+  console.log("YAY! Height is defined");
+} else {
+  console.log("Height is UNDEFINED"); 
+}
+
+if (height !== undefined) {
+  console.log("Height is defined");
+}
+
+const values = [0, 1, "", "hello", undefined, null, NaN, {}, []];
+
+for (const value of values) {
+  console.log("Value:", value);
+  console.log("Boolean:", Boolean(value));
+  
+  if (value) {
+    console.log("Truthy!");
+  } else {
+    console.log("Falsy!");
+  }
+  
+}
+
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn);
+
+if (BMIMark > BMIJohn) {
+  console.log(`Mark's BMI (${BMIMark.toFixed(1)}) is higher than John's (${BMIJohn.toFixed(1)})!`);
+} else if (BMIJohn > BMIMark) {
+  console.log(`John's BMI (${BMIJohn.toFixed(1)}) is higher than Mark's (${BMIMark.toFixed(1)})!`);
+} else {
+  console.log(`Both have the same BMI (${BMIMark.toFixed(1)})!`);
+}
+
