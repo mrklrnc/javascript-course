@@ -39,12 +39,13 @@ document.querySelector('.check').addEventListener('click', function () {
 
   if (guess === secretNumber) {
     console.log('Your guess is correct!');
-    document.querySelector('.message').textContent = 'Correct Number ';
+    document.querySelector('.message').textContent = 'Correct Number 🎉';
     document.querySelector('.number').textContent = secretNumber;
   } else if (guess > secretNumber) {
     console.log('Too high!');
+    document.querySelector('.message').textContent = ' Too High!';
   } else if (guess < secretNumber) {
     console.log('Too low!');
-    document.querySelector('.message').textContent = '📉 Too low!';
+    document.querySelector('.message').textContent = ' Too low!';
   }
 });
