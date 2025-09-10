@@ -41,11 +41,51 @@ document.querySelector('.check').addEventListener('click', function () {
     console.log('Your guess is correct!');
     document.querySelector('.message').textContent = 'Correct Number 🎉';
     document.querySelector('.number').textContent = secretNumber;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
+    }
+    document.querySelector('.message').textContent = 'You Have Won!';
+    document.querySelector('.check').disabled = true;
+    document.querySelector('.guess').disabled = true;
   } else if (guess > secretNumber) {
     console.log('Too high!');
     document.querySelector('.message').textContent = ' Too High!';
+    score--;
+    document.querySelector('.score').textContent = score;
+    if (score < 1) {
+      document.querySelector('.message').textContent =
+        'You Have Lost! Play Again';
+      document.querySelector('.number').textContent = secretNumber;
+      document.querySelector('.check').disabled = true;
+      document.querySelector('.guess').disabled = true;
+    }
   } else if (guess < secretNumber) {
     console.log('Too low!');
     document.querySelector('.message').textContent = ' Too low!';
+    score--;
+    document.querySelector('.score').textContent = score;
+    if (score < 1) {
+      document.querySelector('.message').textContent =
+        'You Have Lost! Play Again';
+      document.querySelector('.number').textContent = secretNumber;
+      document.querySelector('.check').disabled = true;
+      document.querySelector('.guess').disabled = true;
+    }
   }
+});
+
+document.querySelector('.again').addEventListener('click', function () {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  //Restart Message
+  document.querySelector('.message').textContent = 'Start Guessing';
+  //restart question mark
+  document.querySelector('.number').textContent = '?';
+  //Restart Score
+  document.querySelector('.score').textContent = score;
+  //restart guess value
+  document.querySelector('.guess').value = '';
+  document.querySelector('.check').disabled = false;
+  document.querySelector('.guess').disabled = false;
 });
